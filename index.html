@@ -1267,6 +1267,12 @@
                 slider.scrollLeft = scrollLeft - walk;
             });
 
+            // Enable mouse wheel horizontal scrolling
+            slider.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                slider.scrollLeft += e.deltaY;
+            });
+
             slider.style.cursor = 'grab';
         }
 
