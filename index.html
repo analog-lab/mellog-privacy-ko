@@ -1356,7 +1356,7 @@
             const closeBtn = document.querySelector('.modal-close');
             const prevBtn = document.querySelector('.modal-prev');
             const nextBtn = document.querySelector('.modal-next');
-            const images = document.querySelectorAll('.screenshot-grid img');
+            const screenshotImages = document.querySelectorAll('.screenshot-grid img');
             let currentIndex = 0;
             let isDragging = false;
 
@@ -1364,7 +1364,7 @@
             slider.addEventListener('mousedown', () => { isDragging = false; });
             slider.addEventListener('mousemove', () => { isDragging = true; });
 
-            images.forEach((img, index) => {
+            screenshotImages.forEach((img, index) => {
                 img.addEventListener('click', (e) => {
                     if (isDragging) return;
                     currentIndex = index;
@@ -1374,10 +1374,10 @@
             });
 
             function showImage(index) {
-                if (index < 0) index = images.length - 1;
-                if (index >= images.length) index = 0;
+                if (index < 0) index = screenshotImages.length - 1;
+                if (index >= screenshotImages.length) index = 0;
                 currentIndex = index;
-                modalImg.src = images[currentIndex].src;
+                modalImg.src = screenshotImages[currentIndex].src;
             }
 
             closeBtn.addEventListener('click', () => {
